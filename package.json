@@ -1,0 +1,15 @@
+{
+  "name": "instagram-affiliate-page",
+  "version": "1.0.0",
+  "description": "Instagram affiliate landing page with backend admin support",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

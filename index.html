@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop My Amazon Picks</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <div class="hero-content">
+        <img class="avatar" src="AMUL.jpeg" alt="Your Brand" />
+        <h1>Shop by category</h1>
+        <p>Choose one section and browse the best Amazon picks in each category.</p>
+      </div>
+    </header>
+
+    <section class="category-grid" id="categoryGrid">
+      <!-- Category cards are injected by script.js -->
+    </section>
+
+    <footer class="footer">
+      <p>Use this page as your Instagram bio link.</p>
+    </footer>
+  </main>
+
+  <div id="adminOverlay" class="admin-overlay hidden">
+    <div class="admin-panel">
+      <button id="adminCloseBtn" class="close-admin" aria-label="Close admin panel">×</button>
+      <h2>Admin Dashboard</h2>
+
+      <div id="adminLogin" class="admin-login">
+        <p>Enter the admin password to manage products:</p>
+        <input id="adminPassword" type="password" placeholder="Password" autocomplete="current-password" />
+        <button id="adminLoginBtn" class="admin-action">Login</button>
+      </div>
+
+      <div id="adminContent" class="admin-content hidden">
+        <form id="productForm" class="admin-form">
+          <div class="form-row">
+            <label for="productTitle">Product title</label>
+            <input id="productTitle" type="text" required placeholder="Example: Wireless earbuds" />
+          </div>
+          <div class="form-row">
+            <label for="productPrice">Price text</label>
+            <input id="productPrice" type="text" required placeholder="Example: Only $39.99" />
+          </div>
+          <div class="form-row">
+            <label for="productDescription">Product description</label>
+            <textarea id="productDescription" required placeholder="Example: Lightweight, noise-cancelling earbuds" rows="3"></textarea>
+          </div>
+          <div class="form-row">
+            <label for="productImageFile">Upload image</label>
+            <input id="productImageFile" type="file" accept="image/*" />
+            <p class="hint">Choose an image file from your computer and it will be saved for the product.</p>
+          </div>
+          <div class="form-row">
+            <label for="productImage">Image URL or file</label>
+            <input id="productImage" type="text" required placeholder="Paste image link or select a file above" />
+          </div>
+          <div class="form-row">
+            <label for="productCategory">Category</label>
+            <select id="productCategory" required>
+              <option value="Clothing">Clothing</option>
+              <option value="Footwear">Footwear</option>
+              <option value="Accessories">Accessories</option>
+              <option value="Toys & Games">Toys & Games</option>
+              <option value="Household">Household / Office</option>
+              <option value="Tech">Tech</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="productUrl">Amazon affiliate URL</label>
+            <input id="productUrl" type="url" placeholder="Example: https://www.amazon.com/dp/.../?tag=YOUR_AFFILIATE_ID" />
+          </div>
+          <div class="admin-actions">
+            <button type="submit" class="admin-action">Save Product</button>
+            <button id="productCancelBtn" type="button" class="admin-secondary">Cancel</button>
+          </div>
+          <p id="adminMessage" class="admin-message"></p>
+        </form>
+
+        <div class="admin-list-shell">
+          <h3>Current products</h3>
+          <div id="adminProductList" class="admin-product-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.ADMIN_API_BASE = "__ADMIN_API_BASE__";
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
